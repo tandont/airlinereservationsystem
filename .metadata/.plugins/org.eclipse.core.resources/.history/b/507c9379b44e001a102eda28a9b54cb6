@@ -1,0 +1,164 @@
+package com.capgemini.airlinereservationsystem.dao.impl;
+
+import com.capgemini.airlinereservationsystem.dao.UserDAO;
+import com.capgemini.airlinereservationsystem.dto.Ticket;
+import com.capgemini.airlinereservationsystem.dto.User;
+
+public class UserDAOImpl implements UserDAO {
+
+	@Override
+	public User registerUser(User user) {
+		String query = "INSERT INTO person_details VALUES (?,?,?,?,?,?)";
+
+		try (Connection conn = DriverManager.getConnection(BusBookingSystem.DB_URL,BusBookingSystem.DB_USER, BusBookingSystem.DB_PASSWORD);
+				PreparedStatement pstmt = conn.prepareStatement(query);) {
+			pstmt.setInt(1, customer.getCustomerId());
+			pstmt.setString(3, customer.getCustomerName());
+			pstmt.setString(5, customer.getCustomerEmail());
+			pstmt.setString(2, customer.getCustomerPassword());
+			pstmt.setLong(4, customer.getCustomerContact());
+			pstmt.setString(6, "enduser");
+			pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return customer;
+	}
+
+	@Override
+	public User loginUser(Integer userId, String password) {
+		String query = "SELECT * FROM person_details where id='" + customerId + "' and password='" + password + "'";
+
+		try (Connection conn = DriverManager.getConnection(BusBookingSystem.DB_URL,BusBookingSystem.DB_USER, BusBookingSystem.DB_PASSWORD);
+				PreparedStatement pstmt = conn.prepareStatement(query);
+				ResultSet rs = pstmt.executeQuery(query)) {
+
+			Customer user = new Customer();
+
+			if (rs.next()) {
+				user.setCustomerId(rs.getInt("id"));
+				user.setCustomerName(rs.getString("name"));
+				user.setCustomerEmail(rs.getString("email"));
+				user.setCustomerPassword(rs.getString("password"));
+				user.setCustomerContact(rs.getLong("contact"));
+				return user;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public Boolean updateUser(User user) {
+		String query = "UPDATE person_details SET name=?,email=?,password=?,contact=? WHERE id=? and type='enduser'";
+
+		try (Connection conn = DriverManager.getConnection(BusBookingSystem.DB_URL,BusBookingSystem.DB_USER, BusBookingSystem.DB_PASSWORD);
+				PreparedStatement pstmt = conn.prepareStatement(query);) {
+			pstmt.setString(1, customer.getCustomerName());
+			pstmt.setString(2, customer.getCustomerEmail());
+			pstmt.setString(3, customer.getCustomerPassword());
+			pstmt.setLong(4, customer.getCustomerContact());
+			pstmt.setInt(5, customer.getCustomerId());
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return true;
+	}
+
+	@Override
+	public Boolean deleteUser(Integer userId) {
+		String query = "DELETE FROM person_details WHERE id="+customerId;
+		try (Connection conn = DriverManager.getConnection(BusBookingSystem.DB_URL,BusBookingSystem.DB_USER, BusBookingSystem.DB_PASSWORD);
+				PreparedStatement pstmt = conn.prepareStatement(query);) {
+			pstmt.setInt(1, customerId);
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return true;
+	}
+
+	@Override
+	public Ticket bookTicket(Ticket ticket) {
+		java.sql.Date date=new java.sql.Date(ticket.getJourneyDate().getTime());
+		ticket.setJourneyDate(date);
+
+		String query = "INSERT INTO booking_info  VALUES (?,?,?,?,?,?)";
+		String availQuery = "UPDATE  availability SET avail_seats=? WHERE avail_date=? and bus_id=?";
+		int totalAvailSeats = dao.checkAvailability(ticket.getBusId(), (java.sql.Date) ticket.getJourneyDate());
+
+		try (Connection conn = DriverManager.getConnection(BusBookingSystem.DB_URL,BusBookingSystem.DB_USER, BusBookingSystem.DB_PASSWORD);
+				PreparedStatement pstmt = conn.prepareStatement(query);
+				PreparedStatement availpstmt = conn.prepareStatement(availQuery);) {
+			if (ticket.getNumOfSeats() <= totalAvailSeats) {
+
+				//get timestamp
+				ticket.setBookingDateTime(new java.sql.Timestamp(new java.util.Date().getTime()));
+				pstmt.setInt(1, ticket.getBookingId());
+				pstmt.setInt(2, ticket.getBusId());
+				pstmt.setInt(3, ticket.getUserId());
+				pstmt.setDate(4, date);
+				pstmt.setInt(5, ticket.getNumOfSeats());
+				pstmt.setTimestamp(6, (Timestamp)ticket.getBookingDateTime() );
+				int tic = pstmt.executeUpdate();
+				if (tic > -1) {
+					// to decrement number of seats from availability table
+					availpstmt.setInt(1, totalAvailSeats - ticket.getNumOfSeats());
+					availpstmt.setDate(2, (java.sql.Date) ticket.getJourneyDate());
+					availpstmt.setInt(3, ticket.getBusId());
+					availpstmt.executeUpdate();
+
+
+					if(ticket != null) {
+						return ticket;
+					}
+				}
+			} else {
+				return null;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return ticket;
+	}
+
+	@Override
+	public Boolean cancelTicket(Integer bookingId, Integer userId) {
+		String query = "DELETE FROM booking_info WHERE booking_id=? and customer_id=?";
+		String availQuery = "UPDATE  availability SET avail_seats=? WHERE avail_date=? and bus_id=?";
+		Ticket ticket = getTicketInfo(bookingId);
+		System.out.println(ticket);
+
+		int totalAvailSeats = dao.checkAvailability(ticket.getBusId(), (java.sql.Date) ticket.getJourneyDate());
+
+		try (Connection conn = DriverManager.getConnection(BusBookingSystem.DB_URL,BusBookingSystem.DB_USER, BusBookingSystem.DB_PASSWORD);
+				PreparedStatement pstmt = conn.prepareStatement(query);
+				PreparedStatement availpstmt = conn.prepareStatement(availQuery);) {
+			if (ticket != null) {
+				pstmt.setInt(1, bookingId);
+				pstmt.setInt(2, customerId);
+				pstmt.executeUpdate();
+
+				availpstmt.setInt(1, ticket.getNumOfSeats() + totalAvailSeats);
+				availpstmt.setDate(2, (java.sql.Date) ticket.getJourneyDate());
+				availpstmt.setInt(3, ticket.getBusId());
+				availpstmt.executeUpdate();
+				return true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	@Override
+	public Ticket getTicketInfo(Integer bookingId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

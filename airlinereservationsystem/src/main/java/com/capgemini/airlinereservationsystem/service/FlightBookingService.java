@@ -1,0 +1,18 @@
+package com.capgemini.airlinereservationsystem.service;
+
+import java.util.Date;
+import java.util.List;
+
+import com.capgemini.airlinereservationsystem.dto.Flight;
+import com.capgemini.airlinereservationsystem.dto.FlightAvailability;
+
+public interface FlightBookingService {
+	public Flight searchFlight(Integer flightId);
+	public Integer checkAvailability(Integer busId, Date date);
+	public List<FlightAvailability>checkAvailability(String source, String destination, Date date);
+
+	//validate
+	public Integer validId(String id);
+	public String validEmail(String email);
+	public Long validContact(String contact);
+}

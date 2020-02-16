@@ -1,0 +1,37 @@
+package com.capgemini.airlinereservationsystem.validations;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Validator {
+	
+	public static Integer validId(String id) {
+		Pattern pat = Pattern.compile("\\d+");
+		Matcher mat = pat.matcher(id);
+		if (mat.matches()) {
+			return Integer.parseInt(id);
+		} else {
+			return null;
+		}
+	}
+
+	public static String validEmail(String email) {
+		Pattern pat = Pattern.compile("\\w+\\@\\w+\\.\\w+");
+		Matcher mat = pat.matcher(email);
+		if (mat.matches()) {
+			return email;
+		} else {
+			return null;
+		}
+	}
+
+	public static Long validContact(String contact) {
+		Pattern pat = Pattern.compile("\\d{10}");
+		Matcher mat = pat.matcher(contact);
+		if (mat.matches()) {
+			return Long.parseLong(contact);
+		} else {
+			return null;
+		}
+	}
+}

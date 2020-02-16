@@ -1,0 +1,26 @@
+
+fsquid:S4925"-Remove this "Class.forName()", it is useless.(¹µÖÁüÿÿÿÿ8ËŒ®†„.Hø/RMAJORZ
+CODE_SMELL
+`squid:S1148“"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8‡Ì–†„.Hé/RMINORZVULNERABILITY
+`squid:S1148±"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¬›™†„.H÷/RMINORZVULNERABILITY
+lsquid:S2589‹"7Remove this expression which always evaluates to "true"(à²˜¾8†Õš†„.Hô/RMAJORZ
+CODE_SMELL
+^squid:S2068b" Remove this hard-coded password.(®½´¾ûÿÿÿÿ8ÿ·†„.Hï/RBLOCKERZVULNERABILITY
+lsquid:S2589¥"7Remove this expression which always evaluates to "true"(à²˜¾8ƒÑ›†„.Hö/RMAJORZ
+CODE_SMELL
+_squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ş¸•†„.Hõ/RMINORZVULNERABILITY
+_squid:S1148Y"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8İõœ†„.Hë/RMINORZVULNERABILITY
+^squid:S2068v" Remove this hard-coded password.(®½´¾ûÿÿÿÿ8°êµ†„.Hò/RBLOCKERZVULNERABILITY
+r
+squid:S106"9Replace this use of System.out or System.err by a logger.(ÏÄ¥‚úÿÿÿÿ8ƒÑ›†„.Hû/RMAJORZ
+CODE_SMELL
+^squid:S2068P" Remove this hard-coded password.(®½´¾ûÿÿÿÿ8°êµ†„.Hù/RBLOCKERZVULNERABILITY
+Zsquid:S2695d"+This "PreparedStatement" has no parameters.(Ââ——8ËŒ®†„.Hñ/RBLOCKERZBUG
+squid:S2068M"V'Password' detected in this expression, review this potentially hard-coded credential.(¾´­õ8©ó‡„.Hğ/RBLOCKERZVULNERABILITY
+_squid:S1148F"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÑŸ˜†„.Hú/RMINORZVULNERABILITY
+_squid:S2068¢" Remove this hard-coded password.(®½´¾ûÿÿÿÿ8°êµ†„.Hì/RBLOCKERZVULNERABILITY
+`squid:S1148Ì"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8†Õš†„.Hî/RMINORZVULNERABILITY
+^squid:S20686" Remove this hard-coded password.(®½´¾ûÿÿÿÿ8°êµ†„.Hê/RBLOCKERZVULNERABILITY
+_squid:S2068»" Remove this hard-coded password.(®½´¾ûÿÿÿÿ8ÿ·†„.Hü/RBLOCKERZVULNERABILITY
+_squid:S1148g"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ƒÑ›†„.Hó/RMINORZVULNERABILITY
+^squid:S2068!" Remove this hard-coded password.(®½´¾ûÿÿÿÿ8Â¶†„.Hí/RBLOCKERZVULNERABILITY

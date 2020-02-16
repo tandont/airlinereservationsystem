@@ -1,0 +1,33 @@
+package com.capgemini.airlinereservationsystem.service.impl;
+
+import com.capgemini.airlinereservationsystem.dao.AdminDAO;
+import com.capgemini.airlinereservationsystem.dao.impl.AdminDAOImpl;
+import com.capgemini.airlinereservationsystem.dto.Admin;
+import com.capgemini.airlinereservationsystem.dto.User;
+import com.capgemini.airlinereservationsystem.service.AdminService;
+
+public class AdminServiceImpl implements AdminService {
+
+	AdminDAO dao = new AdminDAOImpl();
+
+	@Override
+	public Admin adminLogin(Integer adminId, String password) {
+		return dao.adminLogin(adminId, password);
+	}
+
+	@Override
+	public User registerUser(User user) {
+		return dao.registerUser(user);
+	}
+
+	@Override
+	public Boolean updateUser(Integer userId) {
+		return dao.updateUser(userId);
+	}
+
+	@Override
+	public Boolean deleteUser(Integer userId) {
+		return dao.deleteUser(userId);
+	}
+
+}

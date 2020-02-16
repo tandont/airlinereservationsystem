@@ -1,0 +1,14 @@
+package com.capgemini.airlinereservationsystem.junit;
+
+import org.junit.jupiter.api.Test;
+
+import com.capgemini.airlinereservationsystem.dao.impl.FlightBookingDAOImpl;
+
+public class FlightTest {
+	FlightBookingDAOImpl f1 = new FlightBookingDAOImpl();
+	
+	@Test
+	void Flight{
+		f1.checkAvailability(1000, new java.sql.Date(2020-02-14));
+	}
+}

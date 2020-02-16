@@ -1,0 +1,13 @@
+package com.capgemini.airlinereservationsystem.service;
+
+public interface FlightBookingService {
+	public Flight searchFlight(Integer flightId);
+	public Integer checkAvailability(Integer busId, Date date);
+	public List<Availability>checkAvailability(String source, String destination, Date date);
+	public List<Feedback> viewFeedback();
+
+	//validate
+	public Integer validateId(String id);
+	public String validateEmail(String email);
+	public Long validateContact(String contact);
+}

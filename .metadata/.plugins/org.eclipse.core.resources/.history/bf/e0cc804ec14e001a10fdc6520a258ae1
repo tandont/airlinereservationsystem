@@ -1,0 +1,765 @@
+package com.capgemini.airlinereservationsystem.controller;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+import java.util.Random;
+import java.util.Scanner;
+
+import org.apache.log4j.Logger;
+
+import com.capgemini.airlinereservationsystem.dto.Admin;
+import com.capgemini.airlinereservationsystem.dto.Flight;
+import com.capgemini.airlinereservationsystem.dto.FlightAvailability;
+import com.capgemini.airlinereservationsystem.dto.Personnel;
+import com.capgemini.airlinereservationsystem.dto.Ticket;
+import com.capgemini.airlinereservationsystem.dto.User;
+import com.capgemini.airlinereservationsystem.exceptions.DeletionFailedException;
+import com.capgemini.airlinereservationsystem.exceptions.FlightNotFoundException;
+import com.capgemini.airlinereservationsystem.exceptions.LoginFailedException;
+import com.capgemini.airlinereservationsystem.exceptions.RegistrationFailedException;
+import com.capgemini.airlinereservationsystem.exceptions.TicketBookingFailedException;
+import com.capgemini.airlinereservationsystem.exceptions.UpdationFailedException;
+import com.capgemini.airlinereservationsystem.service.AdminService;
+import com.capgemini.airlinereservationsystem.service.FlightBookingService;
+import com.capgemini.airlinereservationsystem.service.PersonnelService;
+import com.capgemini.airlinereservationsystem.service.UserService;
+import com.capgemini.airlinereservationsystem.service.impl.AdminServiceImpl;
+import com.capgemini.airlinereservationsystem.service.impl.FlightBookingServiceImpl;
+import com.capgemini.airlinereservationsystem.service.impl.PersonnelServiceImpl;
+import com.capgemini.airlinereservationsystem.service.impl.UserServiceImpl;
+import com.capgemini.airlinereservationsystem.validations.Validator;
+
+public class SubController {
+	static Scanner scanner = new Scanner(System.in);
+	static Logger log = Logger.getLogger("ARS");
+	static AdminService adminService = new AdminServiceImpl();
+	static PersonnelService personnelService = new PersonnelServiceImpl();
+	static UserService userService = new UserServiceImpl();
+	static FlightBookingService bookingService = new FlightBookingServiceImpl();
+	static int userId;
+	static int personnelId;
+
+	public void showSubControl() {
+		log.info("----------------------------");
+		log.info("Flight booking & Scheduling System ");
+
+		while (true) {
+			log.info("----------------------------");
+			log.info("Please choose any option...!!! ");
+			log.info("----------------------------");
+			log.info("Press 1 for Admin Login");
+			log.info("Press 2 for Personnel Login");
+			log.info("Press 3 for User Login");
+			log.info("Press 4 for Register User");
+			log.info("Press 0 for Close Application");
+			log.info("----------------------------");
+
+			int choice = Integer.parseInt(scanner.next());
+			if (choice == 1) {
+				Admin admin = null;
+				// Admin Login
+				try {
+					admin = adminLogin();
+				} catch (LoginFailedException e) {
+					e.printStackTrace();
+				}
+				if (admin != null) {
+					log.info("Login Successfull");
+					log.info("Hello " + admin.getAdminName());
+					boolean b = true;
+					while (b) {
+						log.info("************************");
+						log.info("Enter a choice");
+						log.info("1) Add Personnel");
+						log.info("2) Delete Personnel");
+						log.info("3) Delete User");
+						log.info("0) Logout");
+
+						int ch = Integer.parseInt(scanner.next());
+						switch (ch) {
+						case 1:
+
+							try {
+								registerPersonnel();
+							} catch (RegistrationFailedException e1) {
+								e1.printStackTrace();
+							}
+
+							break;
+						case 2:
+							try {
+								deletePersonnel();
+							} catch (DeletionFailedException e) {
+								e.printStackTrace();
+							}
+							break;
+						case 3:
+							try {
+								deleteUser();
+							} catch (DeletionFailedException e) {
+								e.printStackTrace();
+							}
+							break;
+						case 0:
+							b = false;
+							break;
+						default:
+							log.info("Please choose the correct option");
+						}
+					}
+				} else {
+					log.info("Login Failed");
+				}
+			} else if (choice == 2) {
+				Personnel personnel = null;
+				// Personnel login
+				try {
+					personnel = loginPersonnel();
+				} catch (LoginFailedException e) {
+					e.printStackTrace();
+				}
+				if (personnel != null) {
+					log.info("Login Successfull");
+					log.info("Hello " + personnel.getPersonnelName());
+					boolean b = true;
+					while (b) {
+						log.info("*****************************");
+						log.info("Please enter your choice");
+						log.info("1) Add Flight");
+						log.info("2) Delete Flight");
+						log.info("3) Update Flight");
+						log.info("4) Get all Tickets");
+						log.info("5) Set flight availability");
+						log.info("0) Logout");
+
+						int option = Integer.parseInt(scanner.next());
+						switch (option) {
+						case 1:
+							try {
+								addFlight();
+							} catch (RegistrationFailedException e) {
+								e.printStackTrace();
+							}
+							break;
+						case 2:
+							try {
+								deleteflight();
+							} catch (DeletionFailedException e) {
+								e.printStackTrace();
+							}
+							break;
+						case 3:
+							try {
+								updateFlight();
+							} catch (UpdationFailedException e) {
+								e.printStackTrace();
+							}
+							break;
+						case 4:
+							getTicketInfo();
+							break;
+						case 5:
+							try {
+								setFlightFlightAvailability();
+							} catch (FlightNotFoundException e) {
+								e.printStackTrace();
+							}
+							break;
+						case 0:
+							b = false;
+							break;
+						default:
+							log.info("Please enter correct option");
+						}
+					}
+				} else {
+					log.info("Login Failed");
+				}
+			} else if (choice == 3) {
+				User user = null;
+				// User Login
+				try {
+					user = loginUser();
+				} catch (LoginFailedException e) {
+					e.printStackTrace();
+				}
+				if (user != null) {
+					log.info("Login Successfull");
+					log.info("Hello " + user.getUserName());
+
+					boolean b = true;
+					while (b) {
+						log.info("*****************************");
+						log.info("Enter a choice");
+						log.info("1) Update User");
+						log.info("2) Delete User");
+						log.info("3) Book ticket");
+						log.info("4) Cancel ticket");
+						log.info("5) Print Ticket");
+						log.info("6) Check FlightAvailability");
+						log.info("7) Give  Feedback");
+						log.info("0) Logout");
+
+						int option = Integer.parseInt(scanner.next());
+						switch (option) {
+						case 1:
+							try {
+								updateUser();
+							} catch (UpdationFailedException e1) {
+								e1.printStackTrace();
+							}
+							break;
+						case 2:
+							try {
+								deleteUser();
+							} catch (DeletionFailedException e) {
+								e.printStackTrace();
+							}
+							break;
+						case 3:
+							try {
+								bookTicket();
+							} catch (TicketBookingFailedException e) {
+								e.printStackTrace();
+							}
+							break;
+						case 4:
+							cancelTicket();
+							break;
+						case 5:
+							getTicketInfo();
+							break;
+						case 6:
+							checkFlightAvailability();
+							break;
+						case 7:
+							break;
+						case 0:
+							b = false;
+							break;
+						}
+					}
+				} else {
+					log.info("Login Failed");
+				}
+			} else if (choice == 4) {
+				try {
+					registerUser();
+				} catch (RegistrationFailedException e) {
+					e.printStackTrace();
+				}
+			} else if (choice == 0) {
+				break;
+			} else {
+				log.info("Please select the correct option");
+			}
+		}
+	}
+
+	public static Admin adminLogin() throws LoginFailedException {
+		int adminId = 0;
+		while (true) {
+			log.info("Enter the adminId");
+			Integer sId = Validator.validId(scanner.next());
+			if (sId != null) {
+				adminId = sId;
+				break;
+			} else {
+				log.info("Id should be only an Integer");
+			}
+		}
+		log.info("Enter Admin password");
+		String password = scanner.next();
+		Admin admin = adminService.adminLogin(adminId, password);
+		if (admin != null) {
+			return admin;
+		} else {
+			throw new LoginFailedException("Admin login Failed");
+		}
+	}
+
+	public static void registerPersonnel() throws RegistrationFailedException {
+		Personnel personnel = new Personnel();
+		while (true) {
+			log.info("Enter the personnelId");
+			Integer sId = Validator.validId(scanner.next());
+			if (sId != null) {
+				personnel.setPersonnelId(sId);
+				break;
+			} else {
+				log.info("Id should be an integer only");
+			}
+		}
+		log.info("Enter the personnelName");
+		personnel.setPersonnelName(scanner.next());
+		while (true) {
+			log.info("Enter the email id");
+			String sEmail = Validator.validEmail(scanner.next());
+			if (sEmail != null) {
+				personnel.setPersonnelEmail(sEmail);
+				break;
+			} else {
+				log.info("Please enter valid Email id");
+			}
+		}
+		log.info("Enter the password");
+		personnel.setPersonnelPassword(scanner.next());
+		while (true) {
+			log.info("Enter the contact no.");
+			Long contact = Validator.validContact(scanner.next());
+			if (contact != null) {
+				personnel.setPersonnelContact(contact);
+				break;
+			} else {
+				log.info("Contavt No. should be 10 digits");
+			}
+		}
+		personnel = adminService.registerPersonnel(personnel);
+		if (personnel != null) {
+			log.info("Registration sucessful");
+		} else {
+			throw new RegistrationFailedException("Personnel Registration Failed (Duplicate id is not allowed!)");
+		}
+	}
+
+	private static void deletePersonnel() throws DeletionFailedException {
+		log.info("Enter the personnelId to be deleted");
+		Integer personnelId = scanner.nextInt();
+
+		if (adminService.deletePersonnel(personnelId)) {
+			log.info("Personnel deleted sucessfully");
+		} else {
+			throw new DeletionFailedException("Personnel Profile deletion Failed");
+		}
+	}
+
+	private static void deleteUser() throws DeletionFailedException {
+		log.info("Enter the userId to be deleted");
+		Integer userId = scanner.nextInt();
+
+		if (adminService.deleteUser(userId)) {
+			log.info("User deleted sucessfully");
+		} else {
+			throw new DeletionFailedException("User Profile deletion Failed");
+		}
+	}
+
+	public static Personnel loginPersonnel() throws LoginFailedException {
+		int personnelId = 0;
+		while (true) {
+			log.info("Enter the personnelId");
+			Integer sId = Validator.validId(scanner.next());
+			if (sId != null) {
+				personnelId = sId;
+				break;
+			} else {
+				log.info("Id should be Integer");
+			}
+		}
+		log.info("Enter Personnel password");
+		String password = scanner.next();
+		Personnel personnel = personnelService.loginPersonnel(personnelId, password);
+		if (personnel != null) {
+			return personnel;
+		} else {
+			throw new LoginFailedException("Personnel login Failed");
+		}
+	}
+
+	public static void addFlight() throws RegistrationFailedException {
+		Flight flight = new Flight();
+		int flightId = 0;
+		while (true) {
+			log.info("Enter the flightId");
+			Integer sId = Validator.validId(scanner.next());
+			if (sId != null) {
+				flight.setFlightId(sId);
+				break;
+			} else {
+				log.info("Id should be Integer");
+			}
+		}
+		log.info("Enter Flight name");
+		flight.setFlightName(scanner.next());
+		log.info("Enter source point");
+		flight.setSource(scanner.next());
+		log.info("Enter Destination point");
+		flight.setDestination(scanner.next());
+		log.info("Enter Flight type");
+		flight.setFlightType(scanner.next());
+		log.info("Enter Total seats");
+		flight.setTotalSeats(Integer.parseInt(scanner.next()));
+		log.info("Enter fare charge");
+		flight.setPrice(scanner.nextDouble());
+
+		if (personnelService.addFlight(flight) != null) {
+			log.info("Flight added Successfully");
+		} else {
+			throw new RegistrationFailedException("Failed to add Flight");
+		}
+	}
+
+	public static void updateFlight() throws UpdationFailedException {
+		Flight flight = new Flight();
+		int flightId = 0;
+		while (true) {
+			log.info("Enter the flightId");
+			Integer sId = Validator.validId(scanner.next());
+			if (sId != null) {
+				flight.setFlightId(sId);
+				break;
+			} else {
+				log.info("Id should be Integer");
+			}
+		}
+		log.info("Enter new Flight name");
+		flight.setFlightName(scanner.next());
+		log.info("Enter new source point");
+		flight.setSource(scanner.next());
+		log.info("Enter new Destination point");
+		flight.setDestination(scanner.next());
+		log.info("Enter new Flight type");
+		flight.setFlightType(scanner.next());
+		log.info("Enter new Total seats");
+		flight.setTotalSeats(Integer.parseInt(scanner.next()));
+		log.info("Enter new fare charge");
+		flight.setPrice(scanner.nextDouble());
+
+		if (personnelService.updateFlight(flight)) {
+			log.info("Flight updated Successfully");
+		} else {
+			throw new UpdationFailedException("Failed to Update Flight");
+		}
+
+	}
+
+	public static void deleteflight() throws DeletionFailedException {
+		int flightId = 0;
+		while (true) {
+			log.info("Enter the flightId");
+			Integer sId = Validator.validId(scanner.next());
+			if (sId != null) {
+				flightId = sId;
+				break;
+			} else {
+				log.info("Id should be Integer");
+			}
+		}
+		log.info("Do you want to delete\n1. Yes");
+		if (Integer.parseInt(scanner.next()) == 1) {
+			if (personnelService.deleteFlight(flightId)) {
+				log.info("Successfully deleted Flight data ");
+			} else {
+				throw new DeletionFailedException("Flight data not deleted");
+			}
+		}
+	}
+
+	private static void getTicketInfo() {
+		int flightId = 0;
+		while (true) {
+			log.info("Enter the flightId");
+			Integer sId = Validator.validId(scanner.next());
+			if (sId != null) {
+				flightId = sId;
+				break;
+			} else {
+				log.info("Id should be Integer");
+			}
+		}
+
+		log.info("Enter the date(yyyy-mm-dd)");
+		String tempDate = scanner.next();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		Date date = null;
+		try {
+			date = sdf.parse(tempDate);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		List<Ticket> ticketAL = personnelService.getTicketByFlight(flightId, date);
+		if (ticketAL.size() > 0) {
+			log.info("Tickets :");
+			for (Ticket ticket : ticketAL) {
+				log.info("--------------------------------------------");
+				log.info(ticket);
+			}
+		} else {
+			log.info("No Ticket found");
+		}
+	}
+
+	private static void setFlightFlightAvailability() throws FlightNotFoundException {
+		FlightAvailability availability = new FlightAvailability();
+		int flightId = 0;
+		while (true) {
+			log.info("Enter the flightId");
+			Integer sId = Validator.validId(scanner.next());
+			if (sId != null) {
+				flightId = sId;
+				break;
+			} else {
+				log.info("Id should be Integer");
+			}
+		}
+		Flight flight = bookingService.searchFlight(flightId);
+		if (flight != null) {
+			log.info(flight);
+			availability.setFlightId(flightId);
+			log.info("Enter the Available seats");
+			availability.setAvailSeat(Integer.parseInt(scanner.next()));
+			log.info("Enter the date(yyyy-mm-dd)");
+			String tempDate = scanner.next();
+
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+			Date date = null;
+			try {
+				date = sdf.parse(tempDate);
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+			availability.setAvailDate(date);
+
+			if (personnelService.setFlightAvailability(availability)) {
+				log.info("Successfully Set the availability");
+			}
+		} else {
+			log.info("Failed to Set the availability");
+			throw new FlightNotFoundException("No Flight found");
+		}
+	}
+
+	public static void registerUser() throws RegistrationFailedException {
+		User user = new User();
+		while (true) {
+			log.info("Enter the userId");
+			Integer sId = Validator.validId(scanner.next());
+			if (sId != null) {
+				user.setUserId(sId);
+				break;
+			} else {
+				log.info("Id should be number");
+			}
+		}
+		log.info("Enter the userName");
+		user.setUserName(scanner.next());
+		while (true) {
+			log.info("Enter your Email id");
+			String sEmail = Validator.validEmail(scanner.next());
+			if (sEmail != null) {
+				user.setUserEmail(sEmail);
+				break;
+			} else {
+				log.info("Please enter valid email id");
+			}
+		}
+		log.info("Enter the password");
+
+		user.setUserPassword(scanner.next());
+		while (true) {
+			log.info("Enter the contact no.");
+			Long contact = Validator.validContact(scanner.next());
+			if (contact != null) {
+				user.setUserContact(contact);
+				break;
+			} else {
+				log.info("Mobile number should be 10 digits");
+			}
+		}
+		user = userService.registerUser(user);
+		if (user != null) {
+			log.info("Registration sucessfull..!");
+		} else {
+			throw new RegistrationFailedException("Failed to register the user(Duplicate id is not allowed..!)");
+		}
+	}
+
+	public static User loginUser() throws LoginFailedException {
+
+		while (true) {
+			log.info("Enter the userId");
+			Integer sId = Validator.validId(scanner.next());
+			if (sId != null) {
+				userId = sId;
+				break;
+			} else {
+				log.info("Id should be Integer");
+			}
+		}
+		log.info("Enter the password");
+		String password = scanner.next();
+		User user = userService.loginUser(userId, password);
+		if (user != null) {
+			return user;
+		} else {
+			throw new LoginFailedException("User Login Failed");
+		}
+	}
+
+	private static void updateUser() throws UpdationFailedException {
+		User user = new User();
+		user.setUserId(userId);
+		log.info("Enter new password");
+		user.setUserPassword(scanner.next());
+		log.info("Enter New UserName");
+		user.setUserName(scanner.next());
+		while (true) {
+			log.info("Enter the email id");
+			String sEmail = Validator.validEmail(scanner.next());
+			if (sEmail != null) {
+				user.setUserEmail(sEmail);
+				break;
+			} else {
+				log.info("Please enter valid email");
+			}
+		}
+		while (true) {
+			log.info("Enter the contact no.");
+			Long contact = Validator.validContact(scanner.next());
+			if (contact != null) {
+				user.setUserContact(contact);
+				break;
+			} else {
+				log.info("Contact should be 10 digits..!");
+			}
+		}
+		if (userService.updateUser(user)) {
+			log.info("Profile sucessfully Updated");
+		} else {
+			throw new UpdationFailedException("Failed to update user profile");
+		}
+	}
+
+	private static void bookTicket() throws TicketBookingFailedException {
+		Ticket ticket = new Ticket();
+		log.info("Enter source point");
+		String source = scanner.next();
+		log.info("Enter Destination point");
+		String destination = scanner.next();
+		log.info("Enter the date(yyyy-mm-dd)");
+		String tempDate = scanner.next();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		Date date = null;
+		try {
+			date = sdf.parse(tempDate);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		// set Date
+		ticket.setJourneyDate(date);
+		// get current Date
+		long millis = System.currentTimeMillis();
+		java.sql.Date currentDate = new java.sql.Date(millis);
+		List<FlightAvailability> flightlist = bookingService.checkAvailability(source, destination, date);
+		if (flightlist.size() > 0) {
+			for (FlightAvailability avail : flightlist) {
+				log.info(avail);
+				Flight flight = bookingService.searchFlight(avail.getFlightId());
+				int availSeats = avail.getAvailSeat();
+				log.info(flight);
+				log.info("Available seats : " + availSeats);
+				log.info("-------------------------------------------------");
+			}
+
+			Integer flightId = 0;
+			boolean idState = true;
+			while (idState) {
+				log.info("Enter the flightId");
+				String sId = scanner.next();
+				flightId = Validator.validId(sId);
+				if (flightId != null) {
+					ticket.setFlightId(flightId);
+					idState = false;
+				} else {
+					log.info("Id should be Integer");
+				}
+				// get the global userId
+				ticket.setUserId(userId);
+
+				Integer availSeats = bookingService.checkAvailability(flightId, date);
+				if (availSeats > 0) {
+					log.info("Total available seats : " + availSeats);
+				}
+
+				log.info("Please enter no. of seats to book");
+				int numOfSeats = Integer.parseInt(scanner.next());
+				if (numOfSeats > 0) {
+					ticket.setNumOfSeats(numOfSeats);
+				} else {
+					throw new TicketBookingFailedException("Failed to book Ticket");
+				}
+				Random random = new Random();
+				int bookingId = random.nextInt(100000);
+				ticket.setBookingId(bookingId);
+				Ticket bookedTicket = userService.bookTicket(ticket);
+				if (bookedTicket != null) {
+					log.info("Ticket sucessfully Booked");
+					log.info(bookedTicket);
+				} else {
+					throw new TicketBookingFailedException("Ticket Booking Failed");
+				}
+
+			}
+		}
+	}
+
+	private static void cancelTicket() {
+		Ticket ticket = null;
+		List<Integer> ticketList = personnelService.getAllTicket(userId);
+
+		if (ticketList.size() > 0) {
+			for (Integer bookingId : ticketList) {
+				ticket = userService.getTicketInfo(bookingId);
+				log.info(ticket);
+				log.info("------------------------------------------");
+			}
+			int bookingId = 0;
+			while (true) {
+				log.info("Enter the bookingId");
+				Integer sflightId = Validator.validId(scanner.next());
+				if (sflightId != null) {
+					bookingId = sflightId;
+					break;
+				} else {
+					log.info("Id should be Integer");
+				}
+			}
+			if (userService.cancelTicket(bookingId, userId)) {
+				log.info("Ticket cancelled");
+			} else {
+				log.info("Ticket cancelation Failed");
+			}
+		} else {
+			log.info("No tickets found to cancel");
+		}
+	}
+
+	private static void checkFlightAvailability() {
+
+		log.info("Enter source point");
+		String source = scanner.next();
+		log.info("Enter Destination point");
+		String destination = scanner.next();
+
+		log.info("Enter the date(yyyy-mm-dd)");
+		String tempDate = scanner.next();
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		Date date = null;
+		try {
+			date = sdf.parse(tempDate);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+
+		List<FlightAvailability> flightList = bookingService.checkAvailability(source, destination, date);
+		for (FlightAvailability aflight : flightList) {
+			log.info(aflight);
+			int availSeats = bookingService.checkAvailability(aflight.getFlightId(), date);
+
+			log.info("Available seats : " + availSeats);
+			log.info("-----------------------------------------");
+		}
+	}
+}

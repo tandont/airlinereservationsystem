@@ -1,0 +1,5 @@
+package com.capgemini.airlinereservationsystem.junit;
+
+public class PersonnelTest {
+
+}

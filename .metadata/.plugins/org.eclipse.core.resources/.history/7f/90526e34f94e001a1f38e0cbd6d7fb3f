@@ -1,0 +1,19 @@
+package com.capgemini.airlinereservationsystem.controller;
+
+import org.junit.jupiter.api.Test;
+
+import com.capgemini.airlinereservationsystem.dao.impl.AdminDAOImpl;
+import com.capgemini.airlinereservationsystem.dto.Admin;
+import com.capgemini.airlinereservationsystem.dto.User;
+import com.capgemini.airlinereservationsystem.service.impl.AdminServiceImpl;
+
+
+public class AdminTest {
+	AdminDAOImpl a1 = new AdminDAOImpl();
+	@Test
+	void deleteUserTest() {
+		a1.deleteUser(1001);
+	}
+	
+	
+}

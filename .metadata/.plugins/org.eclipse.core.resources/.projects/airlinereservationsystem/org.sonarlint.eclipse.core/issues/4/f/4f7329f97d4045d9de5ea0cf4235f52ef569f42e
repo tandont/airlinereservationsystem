@@ -1,0 +1,12 @@
+
+^squid:S2068X" Remove this hard-coded password.(®½´¾ûÿÿÿÿ8Èÿ¥…„.H‰-RBLOCKERZVULNERABILITY
+_squid:S4925"-Remove this "Class.forName()", it is useless.(¹µÖÁüÿÿÿÿH…-RMAJORZ
+CODE_SMELL
+^squid:S2068" Remove this hard-coded password.(®½´¾ûÿÿÿÿ8Æ¥…„.HŠ-RBLOCKERZVULNERABILITY
+Xsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿH‚-RMINORZVULNERABILITY
+_squid:S1148O"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8©äŸ…„.H‹-RMINORZVULNERABILITY
+^squid:S2068J" Remove this hard-coded password.(®½´¾ûÿÿÿÿ8Æ¥…„.Hˆ-RBLOCKERZVULNERABILITY
+Wsquid:S20687" Remove this hard-coded password.(®½´¾ûÿÿÿÿHƒ-RBLOCKERZVULNERABILITY
+_squid:S1148]"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8‘Ùœ…„.H„-RMINORZVULNERABILITY
+Xsquid:S1148A"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿH‡-RMINORZVULNERABILITY
+_squid:S1148."#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÙÚ¢…„.H†-RMINORZVULNERABILITY

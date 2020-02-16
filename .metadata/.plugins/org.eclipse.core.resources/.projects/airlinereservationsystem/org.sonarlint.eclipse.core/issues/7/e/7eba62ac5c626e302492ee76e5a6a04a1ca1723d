@@ -1,0 +1,15 @@
+
+^squid:S2068 " Remove this hard-coded password.(®½´¾ûÿÿÿÿ8Úâè…„.H.RBLOCKERZVULNERABILITY
+^squid:S2068?" Remove this hard-coded password.(®½´¾ûÿÿÿÿ8›§ç…„.H•.RBLOCKERZVULNERABILITY
+^squid:S2068X" Remove this hard-coded password.(®½´¾ûÿÿÿÿ8Úâè…„.H.RBLOCKERZVULNERABILITY
+_squid:S1148I"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8‰Áİ…„.H.RMINORZVULNERABILITY
+fsquid:S4925"-Remove this "Class.forName()", it is useless.(¹µÖÁüÿÿÿÿ8ˆÀ…„.H‘.RMAJORZ
+CODE_SMELL
+_squid:S11480"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8”Ø…„.H.RMINORZVULNERABILITY
+]squid:S14817")Remove this unused "date" local variable.(ìŠÎ×8²äÙ…„.H’.RMINORZ
+CODE_SMELL
+_squid:S1148b"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ºŠÂ…„.H”.RMINORZVULNERABILITY
+squid:S2293T"YReplace the type specification in this constructor call with the diamond operator ("<>").(˜‡»ú8‰Áİ…„.H“.RMINORZ
+CODE_SMELL
+…squid:S1192&"IDefine a constant instead of duplicating this literal "flightId" 3 times.(Šì Òùÿÿÿÿ8ùÅÆ–„.H’1RCRITICALZ
+CODE_SMELL

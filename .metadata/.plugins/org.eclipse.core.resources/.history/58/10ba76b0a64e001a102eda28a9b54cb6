@@ -1,0 +1,5 @@
+package com.capgemini.airlinereservationsystem.dao.impl;
+
+public class FlightBookingDAOImpl {
+
+}

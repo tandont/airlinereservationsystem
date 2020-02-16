@@ -1,0 +1,18 @@
+package com.capgemini.airlinereservationsystem.service;
+
+import java.util.List;
+
+import com.capgemini.airlinereservationsystem.dto.Flight;
+import com.capgemini.airlinereservationsystem.dto.FlightAvailability;
+import com.capgemini.airlinereservationsystem.dto.Personnel;
+import com.capgemini.airlinereservationsystem.dto.Ticket;
+
+public interface PersonnelService {
+	public Personnel loginPersonnel(Integer personnelId, String password);
+	public Flight addFlight(Flight flight);
+	public Boolean updateFlight(Flight flight);
+	public Boolean deleteFlight(Integer flightId);
+	public List<Ticket>getTicketByFlight(Integer flightId,Date date);
+	public List<Integer>getAllTicket(Integer userId);
+	public Boolean setFlightAvailability(FlightAvailability availability);
+}

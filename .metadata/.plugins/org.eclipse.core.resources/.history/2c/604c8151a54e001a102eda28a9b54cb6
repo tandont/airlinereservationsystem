@@ -1,0 +1,42 @@
+package com.capgemini.airlinereservationsystem.service.impl;
+
+import java.util.Date;
+import java.util.List;
+
+import com.capgemini.airlinereservationsystem.dto.Flight;
+import com.capgemini.airlinereservationsystem.dto.FlightAvailability;
+import com.capgemini.airlinereservationsystem.service.FlightBookingService;
+
+public class FlightBookingServiceImpl implements FlightBookingService {
+
+	public Flight searchFlight(Integer flightId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Integer checkAvailability(Integer busId, Date date) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<Availability> checkAvailability(String source, String destination, Date date) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Integer validId(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String validEmail(String email) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Long validContact(String contact) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

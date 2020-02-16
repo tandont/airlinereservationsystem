@@ -1,0 +1,101 @@
+package com.capgemini.airlinereservationsystem.dao.impl;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import com.capgemini.airlinereservationsystem.dao.FlightBookingDAO;
+import com.capgemini.airlinereservationsystem.dto.Flight;
+import com.capgemini.airlinereservationsystem.dto.FlightAvailability;
+
+public class FlightBookingDAOImpl implements FlightBookingDAO {
+
+	public FlightBookingDAOImpl() {
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+		} catch (Exception e) {
+			e.getStackTrace();
+		}
+	}
+
+	@Override
+	public Flight searchFlight(Integer flightId) {
+		String query = "SELECT  * FROM flight_details where flight_id=" + flightId;
+		Flight flight = null;
+
+		try (Connection conn = DriverManager.getConnection(BusBookingSystem.DB_URL, BusBookingSystem.DB_USER,
+				BusBookingSystem.DB_PASSWORD);
+				Statement stmt = conn.createStatement();
+				ResultSet rs = stmt.executeQuery(query)) {
+
+			if (rs.next()) {
+				flight = new Flight();
+				flight.setFlightId(rs.getInt("flight_id"));
+				flight.setFlightName(rs.getString("flight_name"));
+				flight.setSource(rs.getString("source"));
+				flight.setDestination(rs.getString("destination"));
+				flight.setFlightType(rs.getString("flight_type"));
+				flight.setTotalSeats(rs.getInt("total_seats"));
+				flight.setPrice(rs.getDouble("price"));
+				return flight;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	@Override
+	public Integer checkAvailability(Integer flightId, Date tempDate) {
+		java.sql.Date date = new java.sql.Date(tempDate.getTime());
+
+		String sql = "SELECT avail_seats  FROM availability where bus_id=" + flightId + " and avail_date='" + tempDate
+				+ "'";
+
+		int seats = 0;
+
+		try (Connection conn = DriverManager.getConnection(BusBookingSystem.DB_URL, BusBookingSystem.DB_USER,
+				BusBookingSystem.DB_PASSWORD);
+				Statement stmt = conn.createStatement();
+				ResultSet rs = stmt.executeQuery(sql)) {
+			if (rs.next()) {
+				seats = rs.getInt("avail_seats");
+				return seats;
+			} else {
+				return seats;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return seats;
+	}
+
+	@Override
+	public List<FlightAvailability> checkAvailability(String source, String destination, Date date1) {
+		java.sql.Date date=new java.sql.Date(date1.getTime());
+
+		String query = "SELECT bus_id from bus_details where source='" + source + "'" + " and destination='" + destination
+				+ "'";
+		List<FlightAvailability> availList = new ArrayList<FlightAvailability>();
+		FlightAvailability availability = null;
+
+		try (Connection conn = DriverManager.getConnection(BusBookingSystem.DB_URL,BusBookingSystem.DB_USER, BusBookingSystem.DB_PASSWORD);
+				Statement stmt = conn.createStatement();
+				ResultSet rs = stmt.executeQuery(query)) {
+			while (rs.next()) {
+				availability = new FlightAvailability();
+				availability.setFlightId(rs.getInt("flight_id"));
+				availability.setAvailSeat(checkAvailability(rs.getInt("flight_id"), date));
+				availList.add(availability);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return availList;
+	}
+
+}

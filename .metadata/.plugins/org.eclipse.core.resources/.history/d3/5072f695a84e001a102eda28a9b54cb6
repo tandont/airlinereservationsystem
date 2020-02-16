@@ -1,0 +1,36 @@
+package com.capgemini.airlinereservationsystem.service.impl;
+
+import java.util.Date;
+import java.util.List;
+
+import com.capgemini.airlinereservationsystem.dao.FlightBookingDAO;
+import com.capgemini.airlinereservationsystem.dao.UserDAO;
+import com.capgemini.airlinereservationsystem.dao.impl.FlightBookingDAOImpl;
+import com.capgemini.airlinereservationsystem.dao.impl.UserDAOImpl;
+import com.capgemini.airlinereservationsystem.dto.Flight;
+import com.capgemini.airlinereservationsystem.dto.FlightAvailability;
+import com.capgemini.airlinereservationsystem.service.UserService;
+
+public class UserServiceImpl implements UserService {
+	UserDAO dao = new UserDAOImpl();
+	FlightBookingDAO fdao = new FlightBookingDAOImpl() {
+		
+		@Override
+		public Flight searchFlight(Integer flightId) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+		
+		@Override
+		public List<FlightAvailability> checkAvailability(String source, String destination, Date date) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+		
+		@Override
+		public Integer checkAvailability(Integer flightId, Date date) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+	};
+}

@@ -1,0 +1,51 @@
+package com.capgemini.airlinereservationsystem.dao.impl;
+
+import com.capgemini.airlinereservationsystem.dao.UserDAO;
+import com.capgemini.airlinereservationsystem.dto.Ticket;
+import com.capgemini.airlinereservationsystem.dto.User;
+
+public class UserDAOImpl implements UserDAO {
+
+	@Override
+	public User registerUser(User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public User loginUser(Integer userId, String password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Boolean updateUser(User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Boolean deleteUser(Integer userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Ticket bookTicket(Ticket ticket) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Boolean cancelTicket(Integer bookingId, Integer userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Ticket getTicketInfo(Integer bookingId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

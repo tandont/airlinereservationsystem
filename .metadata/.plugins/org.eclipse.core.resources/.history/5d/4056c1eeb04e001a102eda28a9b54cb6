@@ -1,0 +1,30 @@
+package com.capgemini.airlinereservationsystem.dao.impl;
+
+import java.util.Date;
+import java.util.List;
+
+import com.capgemini.airlinereservationsystem.dao.FlightBookingDAO;
+import com.capgemini.airlinereservationsystem.dto.Flight;
+import com.capgemini.airlinereservationsystem.dto.FlightAvailability;
+
+public class FlightBookingDAOImpl implements FlightBookingDAO {
+
+	@Override
+	public Flight searchFlight(Integer flightId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Integer checkAvailability(Integer flightId, Date date) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<FlightAvailability> checkAvailability(String source, String destination, Date date) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

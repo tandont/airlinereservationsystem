@@ -1,0 +1,15 @@
+package com.capgemini.airlinereservationsystem.controller;
+
+import org.junit.jupiter.api.Test;
+
+import com.capgemini.airlinereservationsystem.dto.Admin;
+import com.capgemini.airlinereservationsystem.dto.User;
+
+public class AdminTest {
+	Admin a1 = new Admin();
+	@Test
+	void loginTest() {
+		User actual=a1.adminLogin("bhavana@gmail.com", "Bhavana@123");
+		assertNotNull(actual);
+	}
+}

@@ -1,0 +1,11 @@
+package com.capgemini.airlinereservationsystem.dao;
+
+import com.capgemini.airlinereservationsystem.dto.Admin;
+import com.capgemini.airlinereservationsystem.dto.User;
+
+public interface AdminDAO {
+	public Admin adminLogin(Integer adminId, String password);
+	public User registerUser(User user);
+	public Boolean updateUser(Integer userId);
+	public Boolean deleteUser(Integer userId);
+}

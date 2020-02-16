@@ -1,0 +1,65 @@
+package com.capgemini.airlinereservationsystem.dao.impl;
+
+import com.capgemini.airlinereservationsystem.dao.UserDAO;
+import com.capgemini.airlinereservationsystem.dto.Ticket;
+import com.capgemini.airlinereservationsystem.dto.User;
+
+public class UserDAOImpl implements UserDAO {
+
+	@Override
+	public User registerUser(User user) {
+		String query = "INSERT INTO person_details VALUES (?,?,?,?,?,?)";
+
+		try (Connection conn = DriverManager.getConnection(BusBookingSystem.DB_URL,BusBookingSystem.DB_USER, BusBookingSystem.DB_PASSWORD);
+				PreparedStatement pstmt = conn.prepareStatement(query);) {
+			pstmt.setInt(1, customer.getCustomerId());
+			pstmt.setString(3, customer.getCustomerName());
+			pstmt.setString(5, customer.getCustomerEmail());
+			pstmt.setString(2, customer.getCustomerPassword());
+			pstmt.setLong(4, customer.getCustomerContact());
+			pstmt.setString(6, "enduser");
+			pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return customer;
+	}
+
+	@Override
+	public User loginUser(Integer userId, String password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Boolean updateUser(User user) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Boolean deleteUser(Integer userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Ticket bookTicket(Ticket ticket) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Boolean cancelTicket(Integer bookingId, Integer userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Ticket getTicketInfo(Integer bookingId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

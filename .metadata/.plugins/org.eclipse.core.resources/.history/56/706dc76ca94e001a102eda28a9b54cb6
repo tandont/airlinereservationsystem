@@ -1,0 +1,47 @@
+package com.capgemini.airlinereservationsystem.dto;
+
+public class AirportPersonnel {
+	private Integer personnelId;
+	private String personnelPassword;
+	private String personnelName;
+	private String personnelEmail;
+	private Long personnelContact;
+	public Integer getPersonnelId() {
+		return personnelId;
+	}
+	public void setPersonnelId(Integer personnelId) {
+		this.personnelId = personnelId;
+	}
+	public String getPersonnelPassword() {
+		return personnelPassword;
+	}
+	public void setPersonnelPassword(String personnelPassword) {
+		this.personnelPassword = personnelPassword;
+	}
+	public String getPersonnelName() {
+		return personnelName;
+	}
+	public void setPersonnelName(String personnelName) {
+		this.personnelName = personnelName;
+	}
+	public String getPersonnelEmail() {
+		return personnelEmail;
+	}
+	public void setPersonnelEmail(String personnelEmail) {
+		this.personnelEmail = personnelEmail;
+	}
+	public Long getPersonnelContact() {
+		return personnelContact;
+	}
+	public void setPersonnelContact(Long personnelContact) {
+		this.personnelContact = personnelContact;
+	}
+	@Override
+	public String toString() {
+		return "AirportPersonnel [personnelId=" + personnelId + ", personnelPassword=" + personnelPassword
+				+ ", personnelName=" + personnelName + ", personnelEmail=" + personnelEmail + ", personnelContact="
+				+ personnelContact + "]";
+	}
+	
+	
+}

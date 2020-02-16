@@ -1,0 +1,83 @@
+package com.capgemini.airlinereservationsystem.dao.impl;
+
+import java.util.Date;
+import java.util.List;
+
+import com.capgemini.airlinereservationsystem.dao.PersonnelDAO;
+import com.capgemini.airlinereservationsystem.dto.Flight;
+import com.capgemini.airlinereservationsystem.dto.FlightAvailability;
+import com.capgemini.airlinereservationsystem.dto.Personnel;
+import com.capgemini.airlinereservationsystem.dto.Ticket;
+
+public class PersonnelDAOImpl implements PersonnelDAO {
+
+	public PersonnelDAOImpl() {
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}	
+	}
+	@Override
+	public Personnel loginPersonnel(Integer personnelId, String password) {
+		String query = "SELECT * FROM person_details where id=" + personnelId + " and password='" + password + "' and type='personnel'";
+		Personnel personnel=null;
+
+		try (Connection connection = DriverManager.getConnection(BusBookingSystem.DB_URL,BusBookingSystem.DB_USER, BusBookingSystem.DB_PASSWORD);
+				Statement statement = connection.createStatement();
+				ResultSet resultset = statement.executeQuery(query)) {
+			if (resultset.next()) {
+				personnel=new Personnel();
+				personnel.setPersonnelId(resultset.getInt("id"));
+				personnel.setPersonnelPassword(resultset.getString("password"));
+				personnel.setPersonnelName(resultset.getString("name"));
+				personnel.setPersonnelEmail(resultset.getString("email"));
+				personnel.setPersonnelContact(resultset.getLong("contact"));
+				return personnel;
+			} else {
+				return null;
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return personnel;
+	}
+
+	@Override
+	public Flight addFlight(Flight flight) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Boolean updateFlight(Flight flight) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Boolean deleteFlight(Integer flightId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Integer> getAllTicket(Integer userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Ticket> getTicketByFlight(Integer flightId, Date date) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Boolean setFlightAvailability(FlightAvailability availability) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}

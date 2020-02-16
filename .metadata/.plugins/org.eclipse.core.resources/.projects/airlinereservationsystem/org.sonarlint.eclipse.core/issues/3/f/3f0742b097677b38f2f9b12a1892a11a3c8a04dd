@@ -1,0 +1,80 @@
+
+`squid:S1148ì"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ö±…„.Hß-RMINORZVULNERABILITY
+`squid:S1148†"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ö±…„.Hæ-RMINORZVULNERABILITY
+“squid:S1192×"[Define a constant instead of duplicating this literal "Enter the date(yyyy-mm-dd)" 4 times.(â…ØŒ8Ö±…„.Hå-RCRITICALZ
+CODE_SMELL
+ƒsquid:S1192F"GDefine a constant instead of duplicating this literal "Hello " 3 times.(Ê»¶àûÿÿÿÿ8Ö±…„.Hç-RCRITICALZ
+CODE_SMELL
+`squid:S1148Ù"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ö±…„.Hè-RMINORZVULNERABILITY
+ssquid:S1155Ã">Use isEmpty() to check whether the collection is empty or not.(øÅ£•8Ö±…„.Hö-RMINORZ
+CODE_SMELL
+_squid:S1148W"#Use a logger to log this exception.(Âşÿâûÿÿÿÿ8Ö±…„.Hô-RMINORZVULNERABILITY
+`squid:S1148ø"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ö±…„.Hí-RMINORZVULNERABILITY
+squid:S1192±"SDefine a constant instead of duplicating this literal "Enter the password" 3 times.(›­ÿÚúÿÿÿÿ8Ö±…„.Hİ-RCRITICALZ
+CODE_SMELL
+_squid:S5411Ô"*Use the primitive boolean expression here.(‰¯ªñ8Ö±…„.Hà-RMINORZ
+CODE_SMELL
+„squid:S1192q"MDefine a constant instead of duplicating this literal "Login Failed" 3 times.(Æ›Å8Ö±…„.HÙ-RCRITICALZ
+CODE_SMELL
+Šsquid:S3776ù"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(É¢­¯8Ö±…„.Hã-RCRITICALZ
+CODE_SMELL
+squid:S1192E"RDefine a constant instead of duplicating this literal "Login Successfull" 3 times.(¬¥ò üÿÿÿÿ8Ö±…„.Hï-RCRITICALZ
+CODE_SMELL
+`squid:S1148º"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ö±…„.HÖ-RMINORZVULNERABILITY
+_squid:S1148_"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ö±…„.H÷-RMINORZVULNERABILITY
+_squid:S5411ò"*Use the primitive boolean expression here.(ÙªÿÆ8Ö±…„.Há-RMINORZ
+CODE_SMELL
+gsquid:S1481”"-Remove this unused "flightId" local variable.(ÇÊçíÿÿÿÿÿ8ÅÁÈ„.HĞ-RMINORZ
+CODE_SMELL
+_squid:S5411É"*Use the primitive boolean expression here.(Æ–Ä8Ö±…„.Hõ-RMINORZ
+CODE_SMELL
+dsquid:S5411‹"*Use the primitive boolean expression here.(şø‚çüÿÿÿÿ8Ö±…„.HÑ-RMINORZ
+CODE_SMELL
+v"squid:SwitchLastCaseIsDefaultCheckÍ""Add a default case to this switch.(­Ö¹§úÿÿÿÿ8Ö±…„.HÛ-RCRITICALZ
+CODE_SMELL
+ssquid:S1155Œ">Use isEmpty() to check whether the collection is empty or not.(§¬è8Ö±…„.Hî-RMINORZ
+CODE_SMELL
+`squid:S1148Ş"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ö±…„.Hê-RMINORZVULNERABILITY
+_squid:S1148B"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ö±…„.HÜ-RMINORZVULNERABILITY
+squid:S1192ä"UDefine a constant instead of duplicating this literal "Id should be Integer" 9 times.(«­Ö®8Ö±…„.HÎ-RCRITICALZ
+CODE_SMELL
+^squid:S5411¬"*Use the primitive boolean expression here.(‰°ïo8Ö±…„.Hò-RMINORZ
+CODE_SMELL
+`squid:S1148–"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ö±…„.Hù-RMINORZVULNERABILITY
+`squid:S1148§"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ö±…„.HÔ-RMINORZVULNERABILITY
+Nsquid:S2119°"Save and re-use this "Random".(¼İÅf8Ö±…„.Hä-RCRITICALZBUG
+‚squid:S1192Ù"KDefine a constant instead of duplicating this literal "yyyy-MM-dd" 4 times.(¬ü¯-8Ö±…„.Hë-RCRITICALZ
+CODE_SMELL
+tsquid:S1854Š"?Remove this useless assignment to local variable "currentDate".(Òå®…8Ö±…„.HÚ-RMAJORZ
+CODE_SMELL
+‘squid:S1192–"TDefine a constant instead of duplicating this literal "Enter the Flight Id" 4 times.(¦İ´£şÿÿÿÿ8áØô‘„.HŒ.RCRITICALZ
+CODE_SMELL
+ssquid:S1155á">Use isEmpty() to check whether the collection is empty or not.(Ò”œ‹8Ö±…„.HØ-RMINORZ
+CODE_SMELL
+squid:S3776,"SRefactor this method to reduce its Cognitive Complexity from 119 to the 15 allowed.(ó«Èæşÿÿÿÿ8Ö±…„.HÍ-RCRITICALZ
+CODE_SMELL
+é%squid:RedundantThrowsDeclarationCheckì"”Remove the declaration of thrown exception 'com.capgemini.airlinereservationsystem.exceptions.FlightNotFoundException' which is a runtime exception.(Í¿ÚÕüÿÿÿÿ8Ö±…„.Hé-RMINORZ
+CODE_SMELL
+_squid:S1148y"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ö±…„.HÌ-RMINORZVULNERABILITY
+`squid:S1148à"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ö±…„.HÕ-RMINORZVULNERABILITY
+squid:S1192‚"XDefine a constant instead of duplicating this literal "Enter Destination point" 3 times.(öõäw8Ö±…„.Hğ-RCRITICALZ
+CODE_SMELL
+_squid:S1148f"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ö±…„.Hû-RMINORZVULNERABILITY
+dsquid:S5411Ô"*Use the primitive boolean expression here.(ú¹Š•øÿÿÿÿ8Ö±…„.Hâ-RMINORZ
+CODE_SMELL
+`squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ö±…„.Hì-RMINORZVULNERABILITY
+`squid:S1148Ò"#Use a logger to log this exception.(Âşÿâûÿÿÿÿ8Ö±…„.H×-RMINORZVULNERABILITY
+™squid:S11921"bDefine a constant instead of duplicating this literal "*********************************" 3 times.(ßÆØ¨8Û¯„.Hú-RCRITICALZ
+CODE_SMELL
+_squid:S5411Â"*Use the primitive boolean expression here.(½¾’ç8Ö±…„.HÒ-RMINORZ
+CODE_SMELL
+esquid:S1481Š"0Remove this unused "currentDate" local variable.(Òå®…8Ö±…„.Hñ-RMINORZ
+CODE_SMELL
+“squid:S1192´"VDefine a constant instead of duplicating this literal "Enter the contact no." 3 times.(™ğøÿÿÿÿ8Ö±…„.HÓ-RCRITICALZ
+CODE_SMELL
+gsquid:S1481ó"-Remove this unused "flightId" local variable.(ÇÊçíÿÿÿÿÿ8Ö±…„.HÏ-RMINORZ
+CODE_SMELL
+`squid:S1148‡"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ö±…„.Hü-RMINORZVULNERABILITY
+squid:S1192N"JDefine a constant instead of duplicating this literal "0) Logout" 3 times.(ìëĞ§8Ö±…„.Hó-RCRITICALZ
+CODE_SMELL
+`squid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Ö±…„.HŞ-RMINORZVULNERABILITY

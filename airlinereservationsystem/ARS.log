@@ -1,0 +1,940 @@
+************************************
+Airline Reservation System 
+*********************************
+Please choose any option...
+*********************************
+Press 1 for Admin Login
+Press 2 for Personnel Login
+Press 3 for User Login
+Press 4 for Register User
+Press 0 for Close Application
+*********************************
+Enter the adminId
+Enter Admin password
+Login Successfull
+Hello Tanmay
+************************
+Enter a choice
+1) Add Personnel
+2) Delete Personnel
+3) Delete User
+0) Logout
+*********************************
+Please choose any option...
+*********************************
+Press 1 for Admin Login
+Press 2 for Personnel Login
+Press 3 for User Login
+Press 4 for Register User
+Press 0 for Close Application
+*********************************
+************************************
+Airline Reservation System 
+*********************************
+Please choose any option...
+*********************************
+Press 1 for Admin Login
+Press 2 for Personnel Login
+Press 3 for User Login
+Press 4 for Register User
+Press 0 for Close Application
+*********************************
+Enter the personnelId
+Enter Personnel password
+Login Successfull
+Hello Pawan
+*****************************
+Please enter your choice
+1) Add Flight
+2) Delete Flight
+3) Update Flight
+4) Get all Tickets
+5) Set flight availability
+0) Logout
+Enter the Flight Id
+Enter new Flight name
+Enter new source point
+Enter new Destination point
+Enter new Flight type
+Enter new Total seats
+Enter new fare charge
+*****************************
+Please enter your choice
+1) Add Flight
+2) Delete Flight
+3) Update Flight
+4) Get all Tickets
+5) Set flight availability
+0) Logout
+Enter the flightId
+Enter Flight name
+Enter Source point
+Enter Destination point
+Enter Flight type
+Enter Total seats
+Enter Fare charge
+Flight added Successfully
+*****************************
+Please enter your choice
+1) Add Flight
+2) Delete Flight
+3) Update Flight
+4) Get all Tickets
+5) Set flight availability
+0) Logout
+*********************************
+Please choose any option...
+*********************************
+Press 1 for Admin Login
+Press 2 for Personnel Login
+Press 3 for User Login
+Press 4 for Register User
+Press 0 for Close Application
+*********************************
+Enter the UserId
+Enter the password
+Login Successfull
+Hello Oliver
+*****************************
+Enter a choice
+1) Update User
+2) Delete User
+3) Book ticket
+4) Cancel ticket
+5) Print Ticket
+6) Check FlightAvailability
+0) Logout
+Enter new password
+Enter New UserName
+Enter the email id
+Enter the contact no.
+Profile sucessfully Updated
+*****************************
+Enter a choice
+1) Update User
+2) Delete User
+3) Book ticket
+4) Cancel ticket
+5) Print Ticket
+6) Check FlightAvailability
+0) Logout
+Enter new password
+Enter New UserName
+Enter the email id
+Enter the contact no.
+Profile sucessfully Updated
+*****************************
+Enter a choice
+1) Update User
+2) Delete User
+3) Book ticket
+4) Cancel ticket
+5) Print Ticket
+6) Check FlightAvailability
+0) Logout
+*********************************
+Please choose any option...
+*********************************
+Press 1 for Admin Login
+Press 2 for Personnel Login
+Press 3 for User Login
+Press 4 for Register User
+Press 0 for Close Application
+*********************************
+************************************
+Airline Reservation System 
+*********************************
+Please choose any option...
+*********************************
+Press 1 for Admin Login
+Press 2 for Personnel Login
+Press 3 for User Login
+Press 4 for Register User
+Press 0 for Close Application
+*********************************
+Enter the UserId
+Enter the password
+Login Successfull
+Hello Pawan
+*****************************
+Enter a choice
+1) Update User
+2) Delete User
+3) Book ticket
+4) Cancel ticket
+5) Print Ticket
+6) Check FlightAvailability
+0) Logout
+Enter source point
+Enter Destination point
+Enter the date(yyyy-mm-dd)
+*****************************
+Enter a choice
+1) Update User
+2) Delete User
+3) Book ticket
+4) Cancel ticket
+5) Print Ticket
+6) Check FlightAvailability
+0) Logout
+No tickets found to cancel
+*****************************
+Enter a choice
+1) Update User
+2) Delete User
+3) Book ticket
+4) Cancel ticket
+5) Print Ticket
+6) Check FlightAvailability
+0) Logout
+Enter the flightId
+Enter the date(yyyy-mm-dd)
+No Ticket found
+*****************************
+Enter a choice
+1) Update User
+2) Delete User
+3) Book ticket
+4) Cancel ticket
+5) Print Ticket
+6) Check FlightAvailability
+0) Logout
+Enter source point
+Enter Destination point
+Enter the date(yyyy-mm-dd)
+************************************
+Airline Reservation System 
+*********************************
+Please choose any option...
+*********************************
+Press 1 for Admin Login
+Press 2 for Personnel Login
+Press 3 for User Login
+Press 4 for Register User
+Press 0 for Close Application
+*********************************
+Enter the adminId
+************************************
+Airline Reservation System 
+*********************************
+Please choose any option...
+*********************************
+Press 1 for Admin Login
+Press 2 for Personnel Login
+Press 3 for User Login
+Press 4 for Register User
+Press 0 for Close Application
+*********************************
+Enter the Admin Id
+Enter Admin password
+Login Successfull
+Hello Tanmay
+************************
+Enter a choice
+1) Add Personnel
+2) Delete Personnel
+3) Delete User
+0) Logout
+*********************************
+Please choose any option...
+*********************************
+Press 1 for Admin Login
+Press 2 for Personnel Login
+Press 3 for User Login
+Press 4 for Register User
+Press 0 for Close Application
+*********************************
+************************************
+Airline Reservation System 
+*********************************
+Please choose any option...
+*********************************
+Press 1 for Admin Login
+Press 2 for Personnel Login
+Press 3 for User Login
+Press 4 for Register User
+Press 0 for Close Application
+*********************************
+Enter the UserId
+Enter the password
+Login Successfull
+Hello Clark
+*****************************
+Enter a choice
+1) Update User
+2) Delete User
+3) Book ticket
+4) Cancel ticket
+5) Print Ticket
+6) Check FlightAvailability
+0) Logout
+No tickets found to cancel
+*****************************
+Enter a choice
+1) Update User
+2) Delete User
+3) Book ticket
+4) Cancel ticket
+5) Print Ticket
+6) Check FlightAvailability
+0) Logout
+Ticket [bookingId=100001, flightId=1001, userId=1800, journeyDate=2020-02-16, numOfSeats=1, bookingDateTime=2020-02-14 12:58:19.0]
+***************************************
+Enter the bookingId
+************************************
+Airline Reservation System 
+*********************************
+Please choose any option...
+*********************************
+Press 1 for Admin Login
+Press 2 for Personnel Login
+Press 3 for User Login
+Press 4 for Register User
+Press 0 for Close Application
+*********************************
+Enter the personnelId
+************************************
+Airline Reservation System 
+*********************************
+Please choose any option...
+*********************************
+Press 1 for Admin Login
+Press 2 for Personnel Login
+Press 3 for User Login
+Press 4 for Register User
+Press 0 for Close Application
+*********************************
+Enter the UserId
+Enter the password
+Login Successfull
+Hello Clark
+*****************************
+Enter a choice
+1) Update User
+2) Delete User
+3) Book Ticket
+4) Cancel Ticket
+5) Print Ticket
+6) Check Flight Availability
+0) Logout
+Ticket [bookingId=100001, flightId=1001, userId=1800, journeyDate=2020-02-16, numOfSeats=1, bookingDateTime=2020-02-14 12:58:19.0]
+***************************************
+Enter the bookingId
+Ticket cancelled
+*****************************
+Enter a choice
+1) Update User
+2) Delete User
+3) Book Ticket
+4) Cancel Ticket
+5) Print Ticket
+6) Check Flight Availability
+0) Logout
+Enter source point
+Enter Destination point
+Enter the date(yyyy-mm-dd)
+************************************
+Airline Reservation System 
+*********************************
+Please choose any option...
+*********************************
+Press 1 for Admin Login
+Press 2 for Personnel Login
+Press 3 for User Login
+Press 4 for Register User
+Press 0 for Close Application
+*********************************
+Enter the UserId
+Enter the password
+Login Failed
+*********************************
+Please choose any option...
+*********************************
+Press 1 for Admin Login
+Press 2 for Personnel Login
+Press 3 for User Login
+Press 4 for Register User
+Press 0 for Close Application
+*********************************
+Enter the UserId
+Enter the password
+Login Successfull
+Hello Clark
+*****************************
+Enter a choice
+1) Update User
+2) Delete User
+3) Book Ticket
+4) Cancel Ticket
+5) Print Ticket
+6) Check Flight Availability
+0) Logout
+Enter the flightId
+Enter the date(yyyy-mm-dd)
+No Ticket found
+*****************************
+Enter a choice
+1) Update User
+2) Delete User
+3) Book Ticket
+4) Cancel Ticket
+5) Print Ticket
+6) Check Flight Availability
+0) Logout
+************************************
+Airline Reservation System 
+*********************************
+Please choose any option...
+*********************************
+Press 1 for Admin Login
+Press 2 for Personnel Login
+Press 3 for User Login
+Press 4 for Register User
+Press 0 for Close Application
+*********************************
+************************************
+Airline Reservation System 
+*********************************
+Please choose any option...
+*********************************
+Press 1 for Admin Login
+Press 2 for Personnel Login
+Press 3 for User Login
+Press 4 for Register User
+Press 0 for Close Application
+*********************************
+************************************
+Airline Reservation System 
+*********************************
+Please choose any option...
+*********************************
+Press 1 for Admin Login
+Press 2 for Personnel Login
+Press 3 for User Login
+Press 4 for Register User
+Press 0 for Close Application
+*********************************
+************************************
+Airline Reservation System 
+*********************************
+Please choose any option...
+*********************************
+Press 1 for Admin Login
+Press 2 for Personnel Login
+Press 3 for User Login
+Press 4 for Register User
+Press 0 for Close Application
+*********************************
+Enter the personnelId
+Enter Personnel password
+Login Successfull
+Hello Barry
+*****************************
+Please enter your choice
+1) Add Flight
+2) Delete Flight
+3) Update Flight
+4) Get all Tickets
+5) Set Flight Availability
+0) Logout
+Enter the flightId
+Enter Flight name
+Enter Source point
+Enter Destination point
+Enter Flight type
+Enter Total seats
+Enter Fare charge
+Flight added Successfully
+*****************************
+Please enter your choice
+1) Add Flight
+2) Delete Flight
+3) Update Flight
+4) Get all Tickets
+5) Set Flight Availability
+0) Logout
+Enter the Flight Id
+Do you want to delete
+1. Yes
+Successfully deleted Flight data 
+*****************************
+Please enter your choice
+1) Add Flight
+2) Delete Flight
+3) Update Flight
+4) Get all Tickets
+5) Set Flight Availability
+0) Logout
+Enter the Flight Id
+Enter new Flight name
+Enter new source point
+Enter new Destination point
+Enter new Flight type
+Enter new Total seats
+Enter new fare charge
+*****************************
+Please enter your choice
+1) Add Flight
+2) Delete Flight
+3) Update Flight
+4) Get all Tickets
+5) Set Flight Availability
+0) Logout
+************************************
+Airline Reservation System 
+*********************************
+Please choose any option...
+*********************************
+Press 1 for Admin Login
+Press 2 for Personnel Login
+Press 3 for User Login
+Press 4 for Register User
+Press 0 for Close Application
+*********************************
+Enter the personnelId
+Enter Personnel password
+Login Failed
+*********************************
+Please choose any option...
+*********************************
+Press 1 for Admin Login
+Press 2 for Personnel Login
+Press 3 for User Login
+Press 4 for Register User
+Press 0 for Close Application
+*********************************
+Enter the personnelId
+Enter Personnel password
+************************************
+Airline Reservation System 
+*********************************
+Please choose any option...
+*********************************
+Press 1 for Admin Login
+Press 2 for Personnel Login
+Press 3 for User Login
+Press 4 for Register User
+Press 0 for Close Application
+*********************************
+Enter the Personnel Id
+Enter Personnel password
+Login Successfull
+Hello Barry
+*****************************
+Please enter your choice
+1) Add Flight
+2) Delete Flight
+3) Update Flight
+4) Get all Tickets
+5) Set Flight Availability
+0) Logout
+Enter the Flight Id
+Enter new Flight name
+Enter new source point
+Enter new Destination point
+Enter new Flight type
+Enter new Total seats
+Enter new fare charge
+Flight updated Successfully
+*****************************
+Please enter your choice
+1) Add Flight
+2) Delete Flight
+3) Update Flight
+4) Get all Tickets
+5) Set Flight Availability
+0) Logout
+Enter the flightId
+Enter the date(yyyy-mm-dd)
+No Ticket found
+*****************************
+Please enter your choice
+1) Add Flight
+2) Delete Flight
+3) Update Flight
+4) Get all Tickets
+5) Set Flight Availability
+0) Logout
+Enter the flightId
+Enter the date(yyyy-mm-dd)
+No Ticket found
+*****************************
+Please enter your choice
+1) Add Flight
+2) Delete Flight
+3) Update Flight
+4) Get all Tickets
+5) Set Flight Availability
+0) Logout
+************************************
+Airline Reservation System 
+*********************************
+Please choose any option...
+*********************************
+Press 1 for Admin Login
+Press 2 for Personnel Login
+Press 3 for User Login
+Press 4 for Register User
+Press 0 for Close Application
+*********************************
+Enter the Personnel Id
+Enter Personnel password
+Login Successfull
+Hello Barry
+*****************************
+Please enter your choice
+1) Add Flight
+2) Delete Flight
+3) Update Flight
+4) Get all Tickets
+5) Set Flight Availability
+0) Logout
+Enter the flightId
+Enter the date(yyyy-mm-dd)
+No Ticket found
+*****************************
+Please enter your choice
+1) Add Flight
+2) Delete Flight
+3) Update Flight
+4) Get all Tickets
+5) Set Flight Availability
+0) Logout
+Enter the flightId
+Enter the date(yyyy-mm-dd)
+Tickets :
+--------------------------------------------
+Ticket [bookingId=10001, flightId=1001, userId=1800, journeyDate=2020-02-18, numOfSeats=1, bookingDateTime=2020-02-14 13:08:36.0]
+*****************************
+Please enter your choice
+1) Add Flight
+2) Delete Flight
+3) Update Flight
+4) Get all Tickets
+5) Set Flight Availability
+0) Logout
+Enter the Flight Id
+Failed to Set the availability
+*****************************
+Please enter your choice
+1) Add Flight
+2) Delete Flight
+3) Update Flight
+4) Get all Tickets
+5) Set Flight Availability
+0) Logout
+*********************************
+Please choose any option...
+*********************************
+Press 1 for Admin Login
+Press 2 for Personnel Login
+Press 3 for User Login
+Press 4 for Register User
+Press 0 for Close Application
+*********************************
+************************************
+Airline Reservation System 
+*********************************
+Please choose any option...
+*********************************
+Press 1 for Admin Login
+Press 2 for Personnel Login
+Press 3 for User Login
+Press 4 for Register User
+Press 0 for Close Application
+*********************************
+Enter the Personnel Id
+Enter Personnel password
+Login Failed
+*********************************
+Please choose any option...
+*********************************
+Press 1 for Admin Login
+Press 2 for Personnel Login
+Press 3 for User Login
+Press 4 for Register User
+Press 0 for Close Application
+*********************************
+Enter the Personnel Id
+Enter Personnel password
+Login Successfull
+Hello SaiLatha
+*****************************
+Please enter your choice
+1) Add Flight
+2) Delete Flight
+3) Update Flight
+4) Get all Tickets
+5) Set Flight Availability
+0) Logout
+Enter the flightId
+Enter Flight name
+************************************
+Airline Reservation System 
+*********************************
+Please choose any option...
+*********************************
+Press 1 for Admin Login
+Press 2 for Personnel Login
+Press 3 for User Login
+Press 4 for Register User
+Press 0 for Close Application
+*********************************
+Enter the UserId
+Enter the password
+Login Successfull
+Hello Pawan
+*****************************
+Enter a choice
+1) Update User
+2) Delete User
+3) Book Ticket
+4) Cancel Ticket
+5) Print Ticket
+6) Check Flight Availability
+0) Logout
+Enter the flightId
+Enter the date(yyyy-mm-dd)
+Tickets :
+--------------------------------------------
+Ticket [bookingId=10001, flightId=1001, userId=1800, journeyDate=2020-02-18, numOfSeats=1, bookingDateTime=2020-02-14 13:08:36.0]
+*****************************
+Enter a choice
+1) Update User
+2) Delete User
+3) Book Ticket
+4) Cancel Ticket
+5) Print Ticket
+6) Check Flight Availability
+0) Logout
+Enter source point
+Enter Destination point
+Enter the date(yyyy-mm-dd)
+*****************************
+Enter a choice
+1) Update User
+2) Delete User
+3) Book Ticket
+4) Cancel Ticket
+5) Print Ticket
+6) Check Flight Availability
+0) Logout
+Enter source point
+Enter Destination point
+Enter the date(yyyy-mm-dd)
+*****************************
+Enter a choice
+1) Update User
+2) Delete User
+3) Book Ticket
+4) Cancel Ticket
+5) Print Ticket
+6) Check Flight Availability
+0) Logout
+************************************
+Airline Reservation System 
+*********************************
+Please choose any option...
+*********************************
+Press 1 for Admin Login
+Press 2 for Personnel Login
+Press 3 for User Login
+Press 4 for Register User
+Press 0 for Close Application
+*********************************
+Enter the Admin Id
+Enter Admin password
+Login Successfull
+Hello Tanmay
+************************
+Enter a choice
+1) Add Personnel
+2) Delete Personnel
+3) Delete User
+0) Logout
+Enter the Personnel Id
+Enter the Personnel Name
+Enter the email id
+Enter the password
+Enter the contact no.
+************************************
+Airline Reservation System 
+*********************************
+Please choose any option...
+*********************************
+Press 1 for Admin Login
+Press 2 for Personnel Login
+Press 3 for User Login
+Press 4 for Register User
+Press 0 for Close Application
+*********************************
+************************************
+Airline Reservation System 
+*********************************
+Please choose any option...
+*********************************
+Press 1 for Admin Login
+Press 2 for Personnel Login
+Press 3 for User Login
+Press 4 for Register User
+Press 0 for Close Application
+*********************************
+************************************
+Airline Reservation System 
+*********************************
+Please choose any option...
+*********************************
+Press 1 for Admin Login
+Press 2 for Personnel Login
+Press 3 for User Login
+Press 4 for Register User
+Press 0 for Close Application
+*********************************
+Enter the Admin Id
+Enter Admin password
+Login Successfull
+Hello Tanmay
+************************
+Enter a choice
+1) Add Personnel
+2) Delete Personnel
+3) Delete User
+0) Logout
+Enter the Personnel Id
+Enter the Personnel Name
+Enter the email id
+Please enter valid Email id
+Enter the email id
+Please enter valid Email id
+Enter the email id
+Enter the password
+Enter the contact no.
+Contact No. should be 10 digits
+Enter the contact no.
+Registration Successful
+************************
+Enter a choice
+1) Add Personnel
+2) Delete Personnel
+3) Delete User
+0) Logout
+Enter the personnelId to be deleted
+Personnel deleted sucessfully
+************************
+Enter a choice
+1) Add Personnel
+2) Delete Personnel
+3) Delete User
+0) Logout
+*********************************
+Please choose any option...
+*********************************
+Press 1 for Admin Login
+Press 2 for Personnel Login
+Press 3 for User Login
+Press 4 for Register User
+Press 0 for Close Application
+*********************************
+Enter the Admin Id
+Enter Admin password
+Login Failed
+*********************************
+Please choose any option...
+*********************************
+Press 1 for Admin Login
+Press 2 for Personnel Login
+Press 3 for User Login
+Press 4 for Register User
+Press 0 for Close Application
+*********************************
+************************************
+Airline Reservation System 
+*********************************
+Please choose any option...
+*********************************
+Press 1 for Admin Login
+Press 2 for Personnel Login
+Press 3 for User Login
+Press 4 for Register User
+Press 0 for Close Application
+*********************************
+Enter the Personnel Id
+Enter Personnel Password
+Login Successfull
+Hello Barry
+*****************************
+Please enter your choice
+1) Add Flight
+2) Delete Flight
+3) Update Flight
+4) Get all Tickets
+5) Set Flight Availability
+0) Logout
+Enter the flightId
+Enter Flight name
+Enter Source point
+Enter Destination point
+Enter Flight type
+Enter Total seats
+Enter Fare charge
+Flight added Successfully
+*****************************
+Please enter your choice
+1) Add Flight
+2) Delete Flight
+3) Update Flight
+4) Get all Tickets
+5) Set Flight Availability
+0) Logout
+Enter the Flight Id
+Do you want to delete
+1. Yes
+Successfully deleted Flight data 
+*****************************
+Please enter your choice
+1) Add Flight
+2) Delete Flight
+3) Update Flight
+4) Get all Tickets
+5) Set Flight Availability
+0) Logout
+Enter the Flight Id
+Enter new Flight name
+Enter new Source point
+Enter new Destination point
+Enter new Flight type
+Enter new Total seats
+Enter new fare charge
+Flight updated Successfully
+*****************************
+Please enter your choice
+1) Add Flight
+2) Delete Flight
+3) Update Flight
+4) Get all Tickets
+5) Set Flight Availability
+0) Logout
+Enter the Flight Id
+Enter the date(yyyy-mm-dd)
+No Ticket found
+*****************************
+Please enter your choice
+1) Add Flight
+2) Delete Flight
+3) Update Flight
+4) Get all Tickets
+5) Set Flight Availability
+0) Logout
+Enter the Flight Id
+Enter the date(yyyy-mm-dd)
+Tickets :
+--------------------------------------------
+Ticket [bookingId=10001, flightId=1001, userId=1800, journeyDate=2020-02-18, numOfSeats=1, bookingDateTime=2020-02-14 13:08:36.0]
+*****************************
+Please enter your choice
+1) Add Flight
+2) Delete Flight
+3) Update Flight
+4) Get all Tickets
+5) Set Flight Availability
+0) Logout

@@ -1,0 +1,5 @@
+package com.capgemini.airlinereservationsystem.service.impl;
+
+public class FlightBookingServiceImpl {
+
+}
